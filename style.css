@@ -1,0 +1,76 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f2f5;
+}
+
+/* Container for calculator */
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Input box */
+#box {
+    width: 100%;
+    height: 60px;
+    font-size: 2rem;
+    text-align: right;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+/* Grid for buttons */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-gap: 15px;
+    justify-content: center;
+}
+
+/* Buttons */
+.button-grid button {
+    padding: 20px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: #e0e0e0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+/* Button hover effect */
+.button-grid button:hover {
+    background: #d4d4d4;
+    transform: scale(1.05);
+}
+
+/* Operator buttons styling */
+.button-grid button:nth-child(4n) {
+    background: #ff9500;
+    color: #fff;
+}
+
+.button-grid button:nth-child(4n):hover {
+    background: #e08a00;
+}
+
+/* Last row 3 buttons + toggle sign styling */
+.button-grid button:nth-last-child(-n+3) {
+    grid-column: span 1;
+}
