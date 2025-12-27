@@ -1,5 +1,26 @@
 const input = document.querySelector("#box");
 
+// for keyboard support
+document.addEventListener("keydown", function (event) {
+
+  const key = event.key;
+  if (!isNaN(key)) {
+    getNum(key);
+  } else if (key === "+" || key === "-" || key === "*" || key === "/") {
+    getSign(key);
+  } else if (key === "Enter") {
+    result();
+  } else if (key === "Backspace") {
+    removeLast();
+  } else if (key === ".") {
+    floatVal();
+  } else if (key === "Delete") {
+    remove();
+  } else {
+    return;
+  }
+});
+
 // for taking numbers
 function getNum(n) {
   input.value += n;
